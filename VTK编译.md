@@ -48,7 +48,7 @@ msvs的下载地址：https://visualstudio.microsoft.com/zh-hans/vs/
 <div align=center>
 <img src="./pic/VTK04.jpg"/>
 </div>
-一般是Qt5_DIR缺失，或者Qt5Core_DIR等子目录确实，选择对应目录即可，如下图：
+一般是Qt5_DIR缺失，或者Qt5Core_DIR等子目录缺失，选择对应目录即可，如下图：
 <div align=center>
 <img src="./pic/VTK05.jpg"/>
 </div>
