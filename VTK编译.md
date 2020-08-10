@@ -29,7 +29,7 @@ msvs的下载地址：https://visualstudio.microsoft.com/zh-hans/vs/
 在获得VTK的源代码后，我们需要通过cmake来将其生成*.sln工程。
 首先打开cmake的gui版本，选择源代码目录以及build目录：
 <div align=center>
-<img src="../pic/VTK01.jpg"/>
+<img src="./pic/VTK01.jpg"/>
 </div>
 
 点击**Configure**进行首次配置，弹出如下窗口，使用默认设置，点击**finish**：
