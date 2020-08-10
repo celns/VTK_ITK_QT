@@ -43,7 +43,8 @@ msvs的下载地址：https://visualstudio.microsoft.com/zh-hans/vs/
 <div align=center>
 <img src="./pic/VTK03.jpg"/>
 </div>
-然后第二次点击**Configure**，进行配置，配置结束后，出现红色警告，如下图：
+
+然后第二次点击 **Configure** ，进行配置，配置结束后，出现红色警告，如下图：
 <div align=center>
 <img src="./pic/VTK04.jpg"/>
 </div>
@@ -51,10 +52,12 @@ msvs的下载地址：https://visualstudio.microsoft.com/zh-hans/vs/
 <div align=center>
 <img src="./pic/VTK05.jpg"/>
 </div>
-随后第三次点击**Configure**，进行配置，这一步骤可能需要多次迭代，直到不在出现红色警告条目为止，如下图所示：
+
+随后第三次点击 **Configure** ，进行配置，这一步骤可能需要多次迭代，直到不在出现红色警告条目为止，如下图所示：
 <div align=center>
 <img src="./pic/VTK06.jpg"/>
 </div>
+
 点击**Generate**生成*.sln工程，使用camke编译的工作到此完成。
 ***
 
