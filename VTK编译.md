@@ -36,6 +36,7 @@ msvs的下载地址：https://visualstudio.microsoft.com/zh-hans/vs/
 <div align=center>
 <img src="./pic/VTK02.jpg"/>
 </div>
+
 *等待配置完成*......
 
 配置完成后，进行相关设置，首先勾选VTK_GROUP_ENABLE_Qt, 同时不推荐勾选TESTRING和EXAMPLES,因为会花费大量的编译时间。
@@ -58,7 +59,8 @@ msvs的下载地址：https://visualstudio.microsoft.com/zh-hans/vs/
 ***
 
 ## 3.VTK的*.sln工程编译
-*警告： 一定要确保使用管理员权限打开VS，否则会导致后续操作出现错误
+
+* 警告： 一定要确保使用管理员权限打开VS，否则会导致后续操作出现错误
 
 使用vs打开build目录下的*.sln工程，将ALL_BUILD设为启动项，并点击生成：
 <div align=center>
