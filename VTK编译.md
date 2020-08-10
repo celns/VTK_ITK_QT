@@ -26,4 +26,26 @@ qt的离线安装包下载地址：http://download.qt.io/archive/qt/
 msvs的下载地址：https://visualstudio.microsoft.com/zh-hans/vs/
 ***
 ## 2.VTK的cmake编译
+在获得VTK的源代码后，我们需要通过cmake来将其生成*.sln工程。
+首先打开cmake的gui版本，选择源代码目录以及build目录：
+<img style="display: block; margin: 0 auto;" src="../VTK_ITK_QT/pic/VTK01.jpg" />
+点击**Configure**进行首次配置，弹出如下窗口，使用默认设置，点击**finish**：
+<img style="display: block; margin: 0 auto;" src="../VTK_ITK_QT/pic/VTK02.jpg" />
+*等待配置完成*......
 
+配置完成后，进行相关设置，首先勾选VTK_GROUP_ENABLE_Qt, 同时不推荐勾选TESTRING和EXAMPLES,因为会花费大量的编译时间。
+<img style="display: block; margin: 0 auto;" src="../VTK_ITK_QT/pic/VTK03.jpg" />
+然后第二次点击**Configure**，进行配置，配置结束后，出现红色警告，如下图：
+<img style="display: block; margin: 0 auto;" src="../VTK_ITK_QT/pic/VTK04.jpg" />
+一般是Qt5_DIR缺失，或者Qt5Core_DIR等子目录确实，选择对应目录即可，如下图：
+<img style="display: block; margin: 0 auto;" src="../VTK_ITK_QT/pic/VTK05.jpg" />
+随后第三次点击**Configure**，进行配置，这一步骤可能需要多次迭代，直到不在出现红色警告条目为止，如下图所示：
+<img style="display: block; margin: 0 auto;" src="../VTK_ITK_QT/pic/VTK06.jpg" />
+点击**Generate**生成*.sln工程，使用camke编译的工作到此完成。
+***
+
+## 3.VTK的*.sln工程编译
+*警告： 一定要确保使用管理员权限打开VS，否则会导致后续操作出现错误
+
+使用vs打开build目录下的*.sln工程，将ALL_BUILD设为启动项，并点击生成：
+<img style="display: block; margin: 0 auto;" src="../VTK_ITK_QT/pic/VTK07.jpg" />
