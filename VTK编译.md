@@ -25,4 +25,5 @@ qt的离线安装包下载地址：http://download.qt.io/archive/qt/
 
 msvs的下载地址：https://visualstudio.microsoft.com/zh-hans/vs/
 ***
+## 2.VTK的cmake编译
 
