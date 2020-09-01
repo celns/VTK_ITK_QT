@@ -78,3 +78,31 @@ encoding表明了如何写出树。’ascii‘和'raw'是常见的值，'hex'允
 <img src="./pic/NRRD_Format02.jpg"/>
 </div>
 
+***
+
+## 2.带有数据文件的分离标头
+分离的标头允许NRRDheader访问存储在一个或者多个单独文件中的数据，而使得原始文件完整无缺。在这些情况下 *line skip*和*byte skip*fields非常有用。分离的标头在使用直接IO读取或者写入大量数据的情况下也非常有用。分离的标头也是处理不支持可选压缩编码的NRRD阅读器的最简单方法，因为独立程序（例如’gzip/gunzip‘或者’bzip2/bunzip2‘）能够处理单独的数据文件。
+
+***
+
+## 3.空间和方向信息
+
+在NRD0004文件中，NRRD标头可以描述栅格相对于周围某些空间的方向，NRRD标头中的方向信息定义了数组的各个轴与数组的概念上所处的（单个）空间的基本向量之间的关系。
+
+方向信息是由基本和每轴标识来组合定义的，可以完成四件事情：
+
+* 确定数组周围的空间（或者至少确定其齿唇）。完成基本字段规范’space‘和’space dimensions'，以及基本（非每轴）字段规范‘space unit’。
+* （可选）确定数组的平移（或者位置）。完成基本字段规范‘space origin:'，该字段规范定位了“第一个”样本。
+* 确定数组中每个轴相对于空间的方向。根据每个轴的字段规范’space directions‘完成。
+* （可选）对于作为矢量或者具有相对某些特定坐标系测量的系数的矩阵的数量，基本字段规范’measurement frame‘标识从测量框的坐标到数组周围空间的坐标映射。
+
+space:xxxx
+
+| space| space dimension|描述|
+|----|----|----|
+|'right-anterior-superior'</br>OR 'RAS(右前上)|3|对于医疗数据，表示右手坐标系。此空间用于NIFTI-1扩展到Analyze格式|
+|'left-anterior-superior'</br>OR 'LAS'(左前上)|3|对于医疗数据，表示左手坐标系。此空间以Analyze7.5格式使用|
+|'left-posterior-superior'</br>OR 'LPS'(左后上)|3|对于医疗数据，表示右手坐标系，该空间用于DICOM3|
+|'right-anterior-superior-time'</br>OR'RAST'(右上前时间)|4|像RAS一样，但第四轴有时间维度|
+|’left-anterior-superior-time'</br>OR'LAST'(左上前时间)|4|像LAS一样，但第四轴具有时间维度|
+|'left-posterior-superior-time'</br>OR'LPST'(左后上时间)|4|像LPS一样，但第四轴具有时间维度|
