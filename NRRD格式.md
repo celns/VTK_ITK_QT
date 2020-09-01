@@ -10,7 +10,7 @@ NRRD文件包括两种格式
 
 NRRD的常规格式（带有标头）：
 
-<div align=center>
+<div align=left>
 <img src="./pic/NRRD_Format01.jpg"/>
 </div>
 
@@ -74,7 +74,7 @@ encoding表明了如何写出树。’ascii‘和'raw'是常见的值，'hex'允
 
 所以根据目前为止描述的最小NRRDHeader如下：
 
-<div align=center>
+<div align=left>
 <img src="./pic/NRRD_Format02.jpg"/>
 </div>
 
